@@ -2,46 +2,88 @@
 <html>
 
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="main.css">
-<script src="https://code.jquery.com/jquery-3.7.1.min.js"/></script>
+    <TITLE>Nightingale Tunes - Singing | Tutoring</TITLE>
+    <LINK REL=Stylesheet TYPE="text/css" HREF="/css/style.css">
+    <link href="https://fonts.cdnfonts.com/css/pinyon-script" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Dancing+Script&family=Pinyon+Script&family=Roboto:wght@300&display=swap"
+        rel="stylesheet">
+    <script src="https://kit.fontawesome.com/54216c36e5.js" crossorigin="anonymous"></script>
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $("button").click(function () {
+                var base_url = 'https://hzx6k4asdd.execute-api.eu-north-1.amazonaws.com/final'
+                var url = base_url + '?' + jQuery.param({
+                    name: "DonaldDuck",
+                    email: "Duckburg@sdfgghf.com"
+                });
+                console.log(url)
+                $.ajax({
+                    url:url,
+                    type:'POST',
+                    data:"Text",
+                    success:function (response) {
+                        console.log(response.status);
+                    },
+                    error:function (response) {
+                        console.log(response.status);
+                    }
+                });
+        });
+        });
+    </script>
 
 </head>
 
 <body>
-<header>
-  <div style="min-height:140px;position: relative;">
-  <div id="nav-placeholder" style="position: absolute;top: 50%;transform: translateY(-50%);left: 60%;"></div>
-  <script>
-    $(function(){
-      $("#nav-placeholder").load("navigation.html");
-    });
-  </script>
-</div>
-</header>
+    <header>
+        <H1>Nightingale Tunes - Singing and Tutoring</H1>
+    </header>
+    <div id="main" role="main" style="border:1px;border-style: double;">
+
+        <div class="item">
+            <a href="https://www.eventbrite.co.uk/e/shotgate-music-festival-tickets-687449699557"><img
+                    style="vertical-align:middle; margin-right: 10px;"
+                    src="2023--09-23-Wickford/wickford_small.jpg"></a>
+            <p>Come and see me on 23rd of September in Wickford - Shotgate</p>
+
+        </div>
+
+        <div class="item" style="display: block;flex-grow: 0;">
+
+            <h3>Stay in touch</h3>
+            <input type=text name="name" placeholder="Your name .." /></br>
+            <input type=text name="email" placeholder="Your email .." />
+
+            <button>join my mailing list</button>
 
 
-<section class="container center" style="max-width:600px">
-  <h2 class="wide">THE BAND</h2>
-  <p class="opacity"><i>We love music</i></p>
-</section>
-<section class="container w3-content w3-center" style="max-width:600px">
-  <p class="justify">
-  We have created a fictional band website. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-  </section>
-
-  <section><iframe width="100%" height="166" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/1616736108&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true"></iframe><div style="font-size: 10px; color: #cccccc;line-break: anywhere;word-break: normal;overflow: hidden;white-space: nowrap;text-overflow: ellipsis; font-family: Interstate,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Garuda,Verdana,Tahoma,sans-serif;font-weight: 100;"><a href="https://soundcloud.com/nightingale-tunes" title="Nightingale Tunes" target="_blank" style="color: #cccccc; text-decoration: none;">Nightingale Tunes</a> · <a href="https://soundcloud.com/nightingale-tunes/ave-maria" title="Ave Maria" target="_blank" style="color: #cccccc; text-decoration: none;">Ave Maria</a></div>
-</section>
-  
-<div id="footer-placeholder"></div>
-<script>
-  $(function(){
-    $("#footer-placeholder").load("footer.html");
-  });
-</script>
 
 
+        </div>
+
+
+
+
+    </div>
+
+
+    <footer>
+        <div style="margin-top:15px">
+            <a href="https://www.instagram.com/eva_vocalist/?utm_source=qr&igshid=MzNlNGNkZWQ4Mg%3D%3D" target="_blank"
+                rel="noopener noreferrer"><i class="fa-brands fa-instagram fa-lg" style="padding:5px"></i></a>
+            <a href="https://www.facebook.com/profile.php?id=100090123062292" target="_blank"
+                rel="noopener noreferrer"><i class="fa-brands fa-square-facebook fa-lg" style="padding:5px"></i></a>
+            <a href="https://soundcloud.com/nightingale-tunes" target="_blank" rel="noopener noreferrer"><i
+                    class="fa-brands fa-soundcloud fa-lg" style="padding:5px"></i></a>
+        </div>
+    </footer>
 
 </body>
+
 </html>
