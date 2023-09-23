@@ -19,8 +19,8 @@
             $("button").click(function () {
                 var base_url = 'https://hzx6k4asdd.execute-api.eu-north-1.amazonaws.com/final'
                 var url = base_url + '?' + jQuery.param({
-                    name: "DonaldDuck",
-                    email: "Duckburg@sdfgghf.com"
+                    name: $("input[type=text][name=name]").val(),
+                    email: $("input[type=text][name=email]").val()
                 });
                 console.log(url)
                 $.ajax({
@@ -44,13 +44,14 @@
     <header>
         <H1>Nightingale Tunes - Singing and Tutoring</H1>
     </header>
-    <div id="main" role="main" style="border:1px;border-style: double;">
+    <div id="main" role="main">
 
         <div class="item">
             <a href="https://www.eventbrite.co.uk/e/shotgate-music-festival-tickets-687449699557"><img
                     style="vertical-align:middle; margin-right: 10px;"
                     src="2023--09-23-Wickford/wickford_small.jpg"></a>
             <p>Come and see me on 23rd of September in Wickford - Shotgate</p>
+
 
         </div>
 
@@ -63,6 +64,14 @@
             <button>join my mailing list</button>
 
 
+        </div>
+
+        <div class="item" style="display: block;flex-grow: 0;">
+            <h3>For performances and tutoring</h3>
+            <p>contact me, my email <a href="mailto:sing@nightingaletunes.com">email</a></p>
+    
+    
+            </div></p>
 
 
         </div>

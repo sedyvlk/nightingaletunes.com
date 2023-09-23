@@ -60,6 +60,7 @@ div.item {
     margin: 5%;
     display: flex;
     align-items: top;
+    
 }
 
 input[type=text]:focus {
