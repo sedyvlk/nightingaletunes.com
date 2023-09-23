@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="/main.css">
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"/></script>
+
+</head>
+
+<body>
+<header>
+  <div style="min-height:140px;position: relative;">
+  <div id="nav-placeholder" style="position: absolute;top: 50%;transform: translateY(-50%);left: 60%;"></div>
+  <script>
+    $(function(){
+      $("#nav-placeholder").load("../navigation.html");
+    });
+  </script>
+</div>
+</header>
+
+
+<section class="container center" style="max-width:600px">
+  <h2 class="wide">contact me</h2>
+  <p class="opacity"><i>We love music</i></p>
+</section>
+<section class="container w3-content w3-center" style="max-width:600px">
+  <p class="justify">
+  contact form goes here
+</p>
+  </section>
+
+
+  
+<div id="footer-placeholder"></div>
+<script>
+  $(function(){
+    $("#footer-placeholder").load("../footer.html");
+  });
+</script>
+
+
+
+</body>
+</html>

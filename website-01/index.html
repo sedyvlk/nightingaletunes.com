@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="main.css">
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"/></script>
+
+</head>
+
+<body>
+<header>
+  <div style="min-height:140px;position: relative;">
+  <div id="nav-placeholder" style="position: absolute;top: 50%;transform: translateY(-50%);left: 60%;"></div>
+  <script>
+    $(function(){
+      $("#nav-placeholder").load("navigation.html");
+    });
+  </script>
+</div>
+</header>
+
+
+<section class="container center" style="max-width:600px">
+  <h2 class="wide">THE BAND</h2>
+  <p class="opacity"><i>We love music</i></p>
+</section>
+<section class="container w3-content w3-center" style="max-width:600px">
+  <p class="justify">
+  We have created a fictional band website. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+  </section>
+
+  <section><iframe width="100%" height="166" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/1616736108&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true"></iframe><div style="font-size: 10px; color: #cccccc;line-break: anywhere;word-break: normal;overflow: hidden;white-space: nowrap;text-overflow: ellipsis; font-family: Interstate,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Garuda,Verdana,Tahoma,sans-serif;font-weight: 100;"><a href="https://soundcloud.com/nightingale-tunes" title="Nightingale Tunes" target="_blank" style="color: #cccccc; text-decoration: none;">Nightingale Tunes</a> · <a href="https://soundcloud.com/nightingale-tunes/ave-maria" title="Ave Maria" target="_blank" style="color: #cccccc; text-decoration: none;">Ave Maria</a></div>
+</section>
+  
+<div id="footer-placeholder"></div>
+<script>
+  $(function(){
+    $("#footer-placeholder").load("footer.html");
+  });
+</script>
+
+
+
+</body>
+</html>

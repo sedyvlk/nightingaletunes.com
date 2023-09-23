@@ -1,27 +1,97 @@
 <!DOCTYPE html>
+<html>
 <head>
-<title>nightingaletunes.com</title>
-<style>
-div {
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  /* bring your own prefixes */
-  transform: translate(-50%, -50%);
-  text-align:center;
-  font-family:Trebuchet MS;
-  font-size: 200%;
-}
-body {
-  background-color: #76b5c5;
-}
-</style>
-  
-</head>
-<body>
-  
+    <TITLE>Nightingale Tunes - Singing | Tutoring</TITLE>
+    <LINK REL=Stylesheet TYPE="text/css" HREF="/css/style.css">
+    <link href="https://fonts.cdnfonts.com/css/pinyon-script" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Dancing+Script&family=Pinyon+Script&family=Roboto:wght@300&display=swap"
+        rel="stylesheet">
+    <script src="https://kit.fontawesome.com/54216c36e5.js" crossorigin="anonymous"></script>
 
-<div><a href="mailto:sing@nightingaletunes.com">sing@nightingaletunes.com</a></div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $("button").click(function () {
+                var base_url = 'https://hzx6k4asdd.execute-api.eu-north-1.amazonaws.com/final'
+                var url = base_url + '?' + jQuery.param({
+                    name: $("input[type=text][name=name]").val(),
+                    email: $("input[type=text][name=email]").val()
+                });
+                console.log(url)
+                $.ajax({
+                    url:url,
+                    type:'POST',
+                    data:"Text",
+                    success:function (response) {
+                        console.log(response.status);
+                    },
+                    error:function (response) {
+                        console.log(response.status);
+                    }
+                });
+        });
+        });
+    </script>
+
+</head>
+
+<body>
+    <header>
+        <H1>Nightingale Tunes - Singing and Tutoring</H1>
+    </header>
+    <div id="main" role="main">
+
+        <div class="item">
+            <a href="https://www.eventbrite.co.uk/e/shotgate-music-festival-tickets-687449699557"><img
+                    style="vertical-align:middle; margin-right: 10px;"
+                    src="2023--09-23-Wickford/wickford_small.jpg"></a>
+            <p>Come and see me on 23rd of September in Wickford - Shotgate</p>
+
+
+        </div>
+
+        <div class="item" style="display: block;flex-grow: 0;">
+
+            <h3>Stay in touch</h3>
+            <input type=text name="name" placeholder="Your name .." /></br>
+            <input type=text name="email" placeholder="Your email .." />
+
+            <button>join my mailing list</button>
+
+
+        </div>
+
+        <div class="item" style="display: block;flex-grow: 0;">
+            <h3>For performances and tutoring</h3>
+            <p>contact me, my email <a href="mailto:sing@nightingaletunes.com">email</a></p>
+    
+    
+            </div></p>
+
+
+        </div>
+
+
+
+
+    </div>
+
+
+    <footer>
+        <div style="margin-top:15px">
+            <a href="https://www.instagram.com/eva_vocalist/?utm_source=qr&igshid=MzNlNGNkZWQ4Mg%3D%3D" target="_blank"
+                rel="noopener noreferrer"><i class="fa-brands fa-instagram fa-lg" style="padding:5px"></i></a>
+            <a href="https://www.facebook.com/profile.php?id=100090123062292" target="_blank"
+                rel="noopener noreferrer"><i class="fa-brands fa-square-facebook fa-lg" style="padding:5px"></i></a>
+            <a href="https://soundcloud.com/nightingale-tunes" target="_blank" rel="noopener noreferrer"><i
+                    class="fa-brands fa-soundcloud fa-lg" style="padding:5px"></i></a>
+        </div>
+    </footer>
 
 </body>
+
 </html>
