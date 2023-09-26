@@ -1,12 +1,19 @@
 variable "region" {
   default = "eu-north-1"
-
 }
 variable "accountId" {
   default = "929700548940"
-  
-  
 }
+
+terraform {
+  backend "s3" {
+    bucket = "doprdele-terraform-backend"
+    key    = "ntt/mailling-list.tfstate"
+    region = "eu-north-1"
+    dynamodb_table="terraform-locks"
+  }
+}
+
 provider "aws" {
   region = var.region
   shared_credentials_files = ["~/.aws/credentials"]
@@ -29,6 +36,20 @@ resource "aws_iam_role" "ntt_lambda_role" {
    }
  ]
 })
+}
+
+resource "aws_dynamodb_table" "terraform-locks" {
+    name           = "terraform-locks"
+    read_capacity  = 5
+    write_capacity = 5
+    hash_key       = "LockID"
+    attribute {
+        name = "LockID"
+        type = "S"
+    }
+    tags = {
+        "Name" = "DynamoDB Terraform State Lock Table"
+    }
 }
 
 resource "aws_dynamodb_table" "ntt_maillist" {
