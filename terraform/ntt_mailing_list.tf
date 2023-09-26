@@ -199,3 +199,46 @@ resource "aws_api_gateway_stage" "ntt_final_stage" {
   stage_name    = "final"
 }
 
+
+
+resource "aws_sns_topic" "ntt_subscription_email_bounce" {
+  name = "ntt-subscription-email-bounce"
+}
+
+resource "aws_sns_topic" "ntt_subscription_email_complaint" {
+  name = "ntt-subscription-email-complaint"
+}
+
+resource "aws_sns_topic" "ntt_subscription_email_delivery" {
+  name = "ntt-subscription-email-delivery"
+}
+
+resource "aws_ses_email_identity" "ntt_noreply" {
+  email = "noreply@nightingaletunes.com"
+}
+
+resource "aws_ses_identity_notification_topic" "ntt_subscription_bounce" {
+  topic_arn                = aws_sns_topic.ntt_subscription_email_bounce.arn
+  notification_type        = "Bounce"
+  identity                 = aws_ses_email_identity.ntt_noreply.arn
+  include_original_headers = true
+}
+
+
+resource "aws_ses_identity_notification_topic" "ntt_subscription_complaint" {
+  topic_arn                = aws_sns_topic.ntt_subscription_email_complaint.arn
+  notification_type        = "Complaint"
+  identity                 = aws_ses_email_identity.ntt_noreply.arn
+  include_original_headers = true
+}
+
+resource "aws_ses_identity_notification_topic" "ntt_subscription_delivery" {
+  topic_arn                = aws_sns_topic.ntt_subscription_email_delivery.arn
+  notification_type        = "Delivery"
+  identity                 = aws_ses_email_identity.ntt_noreply.arn
+  include_original_headers = true
+}
+
+output "url" {
+  value = aws_api_gateway_stage.ntt_final_stage.invoke_url
+}
